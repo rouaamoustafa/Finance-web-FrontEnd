@@ -1,0 +1,123 @@
+
+*{
+    font-family: "Kanit", serif;
+}
+
+:root {
+    --dark-blue: #002B45;
+    --blue1: #114B7F;
+    --blue2: #3E7CB1;
+    --blue3: #72A1D1;
+    --blue4: #A9C8E9;
+    --text-color: #222;
+    --light-bg: #f8f9fa;
+    --border-radius: 8px;
+}/* 🔹 Report Page Styles */
+.report-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* 🔹 Report Title */
+.report-title {
+    color: var(--dark-blue);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Filters Section */
+.filters {
+    display: flex;
+    justify-content: center; /* Center all items */
+    align-items: center;
+    gap: 20px; /* Space between filters */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    margin-bottom: 20px;
+}
+
+/* 🔹 Ensure all inputs & selects are aligned properly */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🔹 Labels */
+.filter-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue1);
+    margin-bottom: 5px;
+}
+
+/* 🔹 Dropdowns & Inputs */
+select, input {
+    width: 180px; /* Same width for all */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid var(--blue3);
+    border-radius: 6px;
+    background-color: white;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+select:hover, input:hover, select:focus, input:focus {
+    border-color: var(--blue1);
+    outline: none;
+}
+
+/* 🔹 Chart Container */
+.chart-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    padding: 20px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pie-chart-container {
+    width: 250px; /* Adjust width */
+    height: 250px; /* Adjust height */
+    margin: auto; /* Center it */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 🔹 Error & Loading Messages */
+.error-text {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.loading-text {
+    color: var(--blue1);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 🔹 Responsive Design */
+@media screen and (max-width: 768px) {
+    .report-container {
+        width: 90%;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select, input {
+        width: 100%;
+    }
+}

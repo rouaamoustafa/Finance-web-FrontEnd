@@ -1,0 +1,76 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px;
+}
+
+.h1-sign{
+    color: #0B304D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-sign{
+    width: 480px;
+    height: 40px;
+    border-color: #82C2DD;
+    box-shadow: none;
+}
+
+.btn-log {
+    display: flex;
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1D5B8A;
+    color: white;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;  /* 🔹 This centers the button */
+    cursor: pointer;
+    
+}
+
+.btn-log:hover {
+    background-color: #0B304D;
+}
+
+.tosignup{
+    font-size: 24px;
+    display: flex;
+    gap: 6px;
+}
+
+.text-login{
+    color: #1D5B8A;
+}
+
+.tosignup a{
+    color: #5C99C5;
+    text-decoration: none;
+}
+
+label{
+    color: #1D5B8A;
+    font-size: 24px;
+}
+
+textarea:focus, input:focus{
+    outline: #5C99C5;
+}
+
+@media screen and (max-width: 600px){
+    .input-sign, .btn-log{
+        width: 289px;
+    }
+
+    .tosignup{
+        flex-direction: column;
+        gap: 0;
+    }
+}

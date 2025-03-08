@@ -1,0 +1,201 @@
+/* 🔹 Global Styles */
+* {
+    font-family: "Kanit", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Page Container */
+.admin-page-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* 🔹 Page Title */
+.admin-page-title {
+    color: #002B45;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Error Message */
+.error-message {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Toggle Button */
+.toggle-btn {
+    background: #114B7F;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-btn:hover {
+    background: #3E7CB1;
+}
+
+/* 🔹 Collapsible Content */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+    background: #f8f9fa;
+    padding: 0 20px;
+    border-radius: 6px;
+}
+
+/* 🔹 Show when expanded */
+.collapsible-content.show {
+    max-height: 600px; /* Increased to fit the form */
+    padding: 20px;
+}
+
+/* 🔹 Admins Table */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+    background-color: #002B45;
+    color: white;
+}
+
+/* 🔹 Delete Button */
+.dbtn {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dbtn:hover {
+    background-color: darkred;
+}
+.editbtn {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.editbtn:hover {
+    background-color: var(--blue1);
+}
+/* 🔹 Responsive Design */
+/* 🔹 Edit & Delete Buttons */
+.edit-btn,
+.dbtn {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.edit-btn {
+    background-color: #3E7CB1;
+    color: white;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #114B7F;
+}
+
+.dbtn {
+    background-color: crimson;
+    color: white;
+}
+
+.dbtn:hover {
+    background-color: darkred;
+}
+
+/* 🔹 Edit Modal */
+.edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    z-index: 1000;
+}
+
+.edit-modal h3 {
+    color: #002B45;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* 🔹 Edit Modal Inputs */
+.edit-modal input,
+.edit-modal select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #3E7CB1;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Modal Buttons */
+.edit-modal button {
+    background: #114B7F;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.edit-modal button:hover {
+    background: #3E7CB1;
+}
+
+.edit-modal .cancel-btn {
+    background: crimson;
+}
+
+.edit-modal .cancel-btn:hover {
+    background: darkred;
+}

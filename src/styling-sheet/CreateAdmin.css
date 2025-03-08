@@ -1,0 +1,95 @@
+/* 🔹 Global Styles */
+* {
+    font-family: "Kanit", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Admin Form Container */
+.admin-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5vh;  /* ✅ Fixes cut-off issue */
+    background: #002B45;
+    padding: 5px 20px;  /* ✅ Adds extra space */
+    overflow-y: auto;  /* ✅ Allows scrolling if needed */
+}
+
+/* 🔹 Admin Form Box */
+.admin-form-box {
+    background: white;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-height: 90vh;  /* ✅ Ensures it doesn't overflow */
+    overflow-y: auto;  /* ✅ Enables internal scrolling */
+}
+
+/* 🔹 Form Title */
+.admin-form-title {
+    color: #002B45;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 🔹 Input Fields */
+.input-field-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.input-field-group label {
+    font-weight: 600;
+    color: #002B45;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 🔹 Fix Input Field Spacing */
+.input-field-group input,
+.input-field-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #3E7CB1;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+}
+
+/* 🔹 Prevent Form Cut-Off */
+.input-field-group input:focus,
+.input-field-group select:focus {
+    border-color: #114B7F;
+    outline: none;
+}
+
+/* 🔹 Submit Button */
+.admin-submit-btn {
+    background: #114B7F;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.admin-submit-btn:hover {
+    background: #3E7CB1;
+}
+
+/* 🔹 Responsive Fix */
+@media screen and (max-width: 480px) {
+    .admin-form-box {
+        width: 90%;
+    }
+}

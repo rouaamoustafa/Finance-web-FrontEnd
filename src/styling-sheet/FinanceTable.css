@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap');
+
+:root {
+    --dark-blue: #002B45;
+    --blue1: #114B7F;
+    --blue2: #3E7CB1;
+    --blue3: #72A1D1;
+    --blue4: #A9C8E9;
+    --text-color: #222;
+    --light-bg: #f8f9fa;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: "Kanit", serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    margin: 5vw 10vh;
+}
+
+/*  Table Styling */
+.table-container {
+    width: 95%;
+    margin: 20px auto;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+.container-title{
+  display: flex;
+  justify-content: space-between;
+}
+.container-title .h2{
+ align-content: flex-start;
+}
+.container-title .add-btn{
+  align-content: flex-end;
+ }
+.container-title .sbtn{
+  align-content: flex-end;
+
+ } 
+ table {
+  width: 100%;
+  border-collapse: separate; /* 🔹 Change from 'collapse' to 'separate' */
+  border-spacing: 0; /* 🔹 Remove spacing between cells */
+  border-radius: var(--border-radius); /* ✅ Apply border-radius */
+  overflow: hidden; /* ✅ Ensures rounding applies */
+  border: solid 1px var(--blue3);
+}
+
+/* ✅ Ensure the first & last row have rounded corners */
+table thead tr:first-child th:first-child { 
+  border-top-left-radius: var(--border-radius);
+}
+table thead tr:first-child th:last-child {
+  border-top-right-radius: var(--border-radius);
+}
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--border-radius);
+}
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--border-radius);
+}
+
+
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+}
+
+
+th {
+    background-color: var(--dark-blue);
+    color: white;
+    font-weight: 600;
+}
+
+/*  Uniform Row Color */
+tr {
+    background-color: var(--light-bg); /* All rows have the same color */
+}
+
+td {
+    border-bottom: 1px solid var(--blue3);
+}
+
+/* 🔹 Buttons */
+.add-btn, .ebtn, .dbtn, .sbtn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: none;
+    font-weight: 600;
+}
+.sbtn{
+  background-color: var(--dark-blue);
+    color: white;
+    width: 80px;
+    height: 40px;
+}
+.add-btn {
+    background-color: var(--dark-blue);
+    color: white;
+    width: 80px;
+    height: 40px;
+}
+
+.add-btn:hover {
+    background-color: var(--blue2);
+}
+
+.ebtn {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.ebtn:hover {
+    background-color: var(--blue1);
+}
+
+.dbtn {
+    background-color: crimson;
+    color: white;
+}
+
+.dbtn:hover {
+    background-color: darkred;
+}
+
+.btn-Edit-Delete{
+  display: flex;
+  gap:1px;
+}
+.form-container {
+    background: white;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid var(--blue3);
+    border-radius: 6px;
+}
+
+.sbtn {
+    background-color: var(--blue1);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sbtn:hover {
+    background-color: var(--dark-blue);
+}
+
+h2, h3 {
+    color: var(--dark-blue);
+    text-align: center;
+}
+/*  Modal Styling */
+/*  Modern Popup Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  width: 40%;
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/*  Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  color: crimson;
+}
+
+/*  Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/*  Form Inputs in Modal */
+.modal-content input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid var(--blue3);
+  border-radius: 6px;
+}
+
+.modal-content .sbtn {
+  background-color: var(--blue1);
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal-content .sbtn:hover {
+  background-color: var(--dark-blue);
+}
+
+/*  Cancel Button */
+.modal-content .cancel-btn {
+  background: crimson;
+}
+
+.modal-content .cancel-btn:hover {
+  background: darkred;
+}
