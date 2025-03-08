@@ -19,7 +19,7 @@ const ProfitGoalPage = ({ role }) => {
 
   const fetchGoals = async () => {
     try {
-      const response = await fetch("http://localhost:5001/profit_goals", {
+      const response = await fetch("https://finance-web-zdgx.onrender.com/profit_goals", {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       });
 
@@ -38,8 +38,8 @@ const ProfitGoalPage = ({ role }) => {
   const handleSaveGoal = async (e) => {
     e.preventDefault();
     const url = editingGoalId
-      ? `http://localhost:5001/profit_goals/${editingGoalId}`
-      : "http://localhost:5001/profit_goals";
+      ? `https://finance-web-zdgx.onrender.com/profit_goals/${editingGoalId}`
+      : "https://finance-web-zdgx.onrender.com/profit_goals";
 
     const method = editingGoalId ? "PUT" : "POST";
 
@@ -75,7 +75,7 @@ const ProfitGoalPage = ({ role }) => {
 
   const handleDeleteGoal = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5001/profit_goals/${id}`, {
+      const response = await fetch(`https://finance-web-zdgx.onrender.com/profit_goals/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

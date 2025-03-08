@@ -18,7 +18,7 @@ const ExpensesPage = ({ role }) => {
   const fetchExpenses = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:5001/expenses", {
+      const response = await fetch("https://finance-web-zdgx.onrender.com/expenses", {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -43,7 +43,7 @@ const ExpensesPage = ({ role }) => {
   const handleAddOrUpdateExpense = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
-    const url = editingExpenseId ? `http://localhost:5001/expenses/${editingExpenseId}` : "http://localhost:5001/expenses";
+    const url = editingExpenseId ? `https://finance-web-zdgx.onrender.com/expenses/${editingExpenseId}` : "https://finance-web-zdgx.onrender.com/expenses";
     const method = editingExpenseId ? "PUT" : "POST";
 
     try {
@@ -80,7 +80,7 @@ const ExpensesPage = ({ role }) => {
     if (!id) return;
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`http://localhost:5001/expenses/${id}`, {
+      const response = await fetch(`https://finance-web-zdgx.onrender.com/expenses/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

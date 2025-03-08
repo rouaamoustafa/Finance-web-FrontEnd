@@ -20,7 +20,7 @@ const RecurringExpensesPage = ({ role }) => {
   const fetchRecurringExpenses = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:5001/recurring_expenses", {
+      const response = await fetch("https://finance-web-zdgx.onrender.com/recurring_expenses", {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -52,7 +52,7 @@ const RecurringExpensesPage = ({ role }) => {
 
 
     const token = localStorage.getItem("token");
-    const url = editingExpenseId ? `http://localhost:5001/recurring_expenses/${editingExpenseId}` : "http://localhost:5001/recurring_expenses";
+    const url = editingExpenseId ? `https://finance-web-zdgx.onrender.com/recurring_expenses/${editingExpenseId}` : "https://finance-web-zdgx.onrender.com/recurring_expenses";
     const method = editingExpenseId ? "PUT" : "POST";
 
     try {
@@ -91,7 +91,7 @@ const RecurringExpensesPage = ({ role }) => {
     if (!id) return;
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`http://localhost:5001/recurring_expenses/${id}`, {
+      const response = await fetch(`https://finance-web-zdgx.onrender.com/recurring_expenses/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -22,7 +22,7 @@ const AdminPage = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("http://localhost:5001/admins", {
+      const response = await fetch("https://finance-web-zdgx.onrender.com/admins", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -47,7 +47,7 @@ const AdminPage = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://localhost:5001/admins/${adminId}`, {
+      const response = await fetch(`https://finance-web-zdgx.onrender.com/admins/${adminId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -76,7 +76,7 @@ const AdminPage = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://localhost:5001/admins/${editingAdmin.admin_id}`, {
+      const response = await fetch(`https://finance-web-zdgx.onrender.com/admins/${editingAdmin.admin_id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

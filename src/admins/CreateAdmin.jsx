@@ -19,7 +19,7 @@ const CreateAdmin = ({ onAdminCreated }) => {
     const formData = { name, email, password, role };
 
     try {
-      const response = await fetch("http://localhost:5001/admins", {
+      const response = await fetch("https://finance-web-zdgx.onrender.com/admins", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

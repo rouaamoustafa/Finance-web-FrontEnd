@@ -20,7 +20,7 @@ const ReportsPage = () => {
     setError("");
     setLoading(true);
     const token = localStorage.getItem("token");
-    let url = `http://localhost:5001/reports/${reportType}?year=${year}`;
+    let url = `https://finance-web-zdgx.onrender.com/reports/${reportType}?year=${year}`;
     if (reportType === "monthly") {
       url += `&month=${month}`;
     }

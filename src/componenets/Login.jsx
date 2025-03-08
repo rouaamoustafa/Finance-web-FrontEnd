@@ -18,7 +18,7 @@ const Login = ({ setRole }) => {
     e.preventDefault();
   
     try {
-      const response = await fetch("http://localhost:5001/admins/login", {
+      const response = await fetch("https://finance-web-zdgx.onrender.com/admins/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

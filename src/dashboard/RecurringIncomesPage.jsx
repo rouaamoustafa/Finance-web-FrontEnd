@@ -20,7 +20,7 @@ const RecurringIncomesPage = ({ role }) => {
   const fetchRecurringIncomes = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:5001/recurring_incomes", {
+      const response = await fetch("https://finance-web-zdgx.onrender.com/recurring_incomes", {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -51,7 +51,7 @@ const RecurringIncomesPage = ({ role }) => {
     }
     
     const token = localStorage.getItem("token");
-    const url = editingIncomeId ? `http://localhost:5001/recurring_incomes/${editingIncomeId}` : "http://localhost:5001/recurring_incomes";
+    const url = editingIncomeId ? `https://finance-web-zdgx.onrender.com/recurring_incomes/${editingIncomeId}` : "https://finance-web-zdgx.onrender.com/recurring_incomes";
     const method = editingIncomeId ? "PUT" : "POST";
 
     try {
@@ -90,7 +90,7 @@ const RecurringIncomesPage = ({ role }) => {
     if (!id) return;
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`http://localhost:5001/recurring_incomes/${id}`, {
+      const response = await fetch(`https://finance-web-zdgx.onrender.com/recurring_incomes/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
