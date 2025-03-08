@@ -26,7 +26,7 @@ const MainPage = () => {
     navigate("/"); // Redirect to login
   };
 
-  const goToAdminPage = () => {navigate("/admin");window.location.reload();}
+  const goToAdminPage = () => {navigate("/admin");}
 
   const tabComponents = {
     income: <IncomesPage role={role} />,
