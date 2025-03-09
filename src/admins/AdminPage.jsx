@@ -21,27 +21,39 @@ const AdminPage = () => {
     setError("");
     const token = localStorage.getItem("token");
 
-    try {
-      const response = await fetch("https://finance-web-zdgx.onrender.com/admins", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-
-      if (!response.ok) {
-        if (response.status === 401) {
-          localStorage.removeItem("token");
-          navigate("/login");
-          throw new Error("Unauthorized. Please log in again.");
-        }
-        throw new Error(`Server Error: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setAdmins(data);
-    } catch (err) {
-      console.error("❌ Error fetching admins:", err);
-      setError(err.message || "Failed to load admins.");
+    if (!token) {
+        alert("No authentication token found! Please log in.");
+        navigate("/login");
+        return;
     }
-  };
+
+    try {
+        const response = await fetch("https://finance-web-zdgx.onrender.com/admins", {
+            headers: { 
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}` // ✅ Ensure token is included
+            },
+        });
+
+        const data = await response.json();
+        console.log("Fetch Admins Response:", response.status, data); // ✅ Debug response
+
+        if (!response.ok) {
+            if (response.status === 401) {
+                alert("Session expired. Please log in again.");
+                localStorage.clear();
+                navigate("/login");
+            }
+            throw new Error(`Server Error: ${response.status}`);
+        }
+
+        setAdmins(data);
+    } catch (err) {
+        console.error("❌ Error fetching admins:", err);
+        setError(err.message || "Failed to load admins.");
+    }
+};
+
 
   const handleDelete = async (adminId) => {
     const token = localStorage.getItem("token");

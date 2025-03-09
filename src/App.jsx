@@ -39,9 +39,11 @@ function App() {
   }, [navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    navigate("/login");
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("role");
+    // navigate("/login");
+    localStorage.clear();  // ✅ Clears token & role
+  window.location.href = "/login"; 
   };
 
   return (
