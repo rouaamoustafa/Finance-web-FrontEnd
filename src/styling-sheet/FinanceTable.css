@@ -250,3 +250,48 @@ h2, h3 {
 .modal-content .cancel-btn:hover {
   background: darkred;
 }
+
+@media (max-width: 768px) {
+  body {
+      margin: 5vw 5vw;
+  }
+
+  .table-container {
+      padding: 10px;
+  }
+
+  th, td {
+      padding: 8px 10px;
+      font-size: 14px;
+  }
+
+  .add-btn, .ebtn, .dbtn, .sbtn {
+      padding: 6px 12px;
+      font-size: 12px;
+  }
+
+  .btn-Edit-Delete {
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  .form-container {
+      width: 90%;
+  }
+
+  .modal-content {
+      width: 90%;
+      max-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  th, td {
+      font-size: 12px;
+  }
+
+  .add-btn, .ebtn, .dbtn, .sbtn {
+      padding: 4px 8px;
+      font-size: 10px;
+  }
+}
